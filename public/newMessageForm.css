@@ -1,9 +1,6 @@
-.formContainer {
+body {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #000000;
   background-image: linear-gradient(
       to right,
@@ -14,6 +11,17 @@
     radial-gradient(circle, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
   background-size: 20px 20px, 20px 20px, 20px 20px;
   position: relative;
+  font-family: "Inter", sans-serif;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .messageForm {
@@ -22,20 +30,19 @@
   gap: 1.5rem;
   background-color: #1e1e1e;
   padding: 2.5rem;
-  min-width: 400px;
+  width: 100%;
+  max-width: 500px;
   border-radius: 16px;
   border: 2px solid gray;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
-  font-family: "Inter", sans-serif;
   color: #f0f0f0;
 }
 
 .heading {
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
   text-align: center;
+  color: #ffffff;
 }
 
 .formSection {
@@ -112,4 +119,31 @@ textarea {
 .backBtn:hover {
   background-color: #616060;
   color: #fff;
+}
+
+@media (max-width: 600px) {
+  .messageForm {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .heading {
+    font-size: 1.25rem;
+  }
+
+  .formSection label {
+    font-size: 0.9rem;
+  }
+
+  #submitBtn {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  .backBtn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    top: 15px;
+    left: 15px;
+  }
 }

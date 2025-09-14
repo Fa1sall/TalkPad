@@ -1,5 +1,6 @@
 import express from "express";
 import messages from "../models/messages.js";
+import { format } from "date-fns";
 
 const newMessageRouter = express.Router();
 
@@ -9,7 +10,9 @@ newMessageRouter.get("/", (req, res) => {
 
 newMessageRouter.post("/", (req, res) => {
   const { user, text } = req.body;
-  messages.push({ user, text, added: new Date().toDateString() });
+  const now = new Date();
+  const formattedDate = format(now, "hh:mm a, dd MMM yyyy");
+  messages.push({ user, text, added: formattedDate });
   res.redirect("/");
 });
 

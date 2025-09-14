@@ -23,6 +23,12 @@ app.set("view engine", "ejs");
 app.use("/new", newMessageRouter);
 app.use("/", indexRouter);
 
+//handle errors
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(err.status || 500).send(err);
+});
+
 //start the server
 const PORT = 3000;
 
