@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TalkPad - Message Board</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./reset.css" />
+  </head>
+  <body>
+    <h1 id="title">TalkPad - Message Board</h1>
+    <div class="controls">
+      <a
+        class="sendButton"
+        id="sendButton"
+        href="/new"
+        role="button"
+        aria-label="Add a new message"
+      >
+        <img src="./images/send.png" alt="send button" />
+        <span>Send Message</span>
+      </a>
+    </div>
+    <div class="messagesContainer">
+      <% messages.forEach((message) => { %>
+      <div class="message">
+        <div class="userAvatarContainer">
+          <img src="./images/avatar.png" alt="User Avatar" class="userAvatar" />
+        </div>
+        <div class="userDetailsContainer">
+          <div class="userDetails">
+            <p class="username"><%=message.user%></p>
+            <p class="date"><%=message.added%></p>
+          </div>
+          <div class="userMessage">
+            <p class="text"><%=message.text%></p>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

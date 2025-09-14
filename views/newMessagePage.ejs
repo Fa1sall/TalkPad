@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TalkPad - New Message Form</title>
+    <link rel="stylesheet" href="./newMessageForm.css" />
+    <link rel="stylesheet" href="./reset.css" />
+  </head>
+  <body>
+    <div class="formContainer">
+      <a href="/" class="backBtn">← Back</a>
+      <form action="/new" method="post" class="messageForm" id="messageForm">
+        <div class="heading">Send a new message</div>
+        <div class="formSection">
+          <label for="user">Enter your name</label>
+          <input type="text" id="user" name="user" />
+        </div>
+        <div class="formSection">
+          <label for="text">Enter your message</label>
+          <textarea name="text" id="text"></textarea>
+        </div>
+        <input type="submit" value="Submit" id="submitBtn" />
+      </form>
+    </div>
+
+    <script>
+      const messageForm = document.getElementById("messageForm");
+
+      messageForm.addEventListener("submit", (e) => {
+        const user = document.getElementById("user").value;
+        const message = document.getElementById("text").value;
+        if (user.trim() === "") {
+          alert("Enter a valid username!");
+          e.preventDefault();
+          return;
+        }
+        if (message.trim() === "") {
+          alert("Enter a valid message!");
+          e.preventDefault();
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>
