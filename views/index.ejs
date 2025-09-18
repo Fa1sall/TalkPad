@@ -23,18 +23,18 @@
       </a>
     </div>
     <div class="messagesContainer">
-      <% messages.forEach((message) => { %>
+      <% messages.forEach((msg) => { %>
       <div class="message">
         <div class="userAvatarContainer">
           <img src="./images/avatar.png" alt="User Avatar" class="userAvatar" />
         </div>
         <div class="userDetailsContainer">
           <div class="userDetails">
-            <p class="username"><%=message.user%></p>
-            <p class="date"><%=message.added%></p>
+            <p class="username"><%=msg.username%></p>
+            <p class="date"><%=msg.date%></p>
           </div>
           <div class="userMessage">
-            <p class="text"><%=message.text%></p>
+            <p class="text"><%=msg.message%></p>
           </div>
         </div>
       </div>
